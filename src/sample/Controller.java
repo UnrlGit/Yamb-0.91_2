@@ -367,19 +367,6 @@ public class Controller {
 
 
             yambPapers.add(newPaper);
-//        for (YambPaper g :yambPapers){
-//            System.out.println("DOWN");
-//            System.out.println(g.getDown());
-//            System.out.println("UP");
-//            System.out.println(g.getUp());
-//            System.out.println("FREE");
-//            System.out.println(g.getFree());
-//            System.out.println("CALL");
-//            System.out.println(g.getCall());
-//        }
-//
-//        System.out.println("-----------------------------");
-//        System.out.println("-----------------------------");
 
 
         //GETTING TOTAL SCORE

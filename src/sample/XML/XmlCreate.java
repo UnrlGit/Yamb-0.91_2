@@ -39,15 +39,15 @@ public class XmlCreate {
         List<YambPaper> yambPaperList = yambPapers;
 
         for(YambPaper paper : yambPaperList) {
-            Element gradjaninElement = napraviNoviGradjaniElement(doc, paper);
-            yambPaper.appendChild(gradjaninElement);
+            Element element = napraviNoviYambPaperElement(doc, paper);
+            yambPaper.appendChild(element);
         }
 
         return doc;
     }
-    private static Element napraviNoviGradjaniElement(Document doc, YambPaper g) {
+    private static Element napraviNoviYambPaperElement(Document doc, YambPaper g) {
         Element yambPaper = doc.createElement("YambPaper");
-        // DOWN
+
 
         //DOWN
         Element lineDown = doc.createElement("lineDown");
@@ -253,7 +253,7 @@ public class XmlCreate {
         StreamResult result = new StreamResult(new File("reviewYamb.xml"));
 
         transformer.transform(source, result);
-        transformer.transform(source, new StreamResult(System.out));
+//        transformer.transform(source, new StreamResult(System.out));
     }
 
 
