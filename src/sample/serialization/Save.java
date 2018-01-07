@@ -17,7 +17,6 @@ public class Save {
         try (ObjectOutputStream outStream = new ObjectOutputStream(new FileOutputStream("yamb.dat"))) {
             outStream.writeObject(gamer);
             outStream.close();
-            System.out.println("uspio ser");
         } catch (IOException ex) {
             ex.printStackTrace();
         }
@@ -26,14 +25,12 @@ public class Save {
     public Game loadGame() {
         Game gamer = new Game(new Player("SinglePlayer", true), GameType.SINGLEPLAYER_LOAD);
 
-        // kreiranje ObjectInputStream objekta
         try {
-            ObjectInputStream ois = new ObjectInputStream(new FileInputStream(
-                    "yamb.dat"));
+            ObjectInputStream ois = new ObjectInputStream(
+                    new FileInputStream("yamb.dat"));
             gamer = (Game) ois.readObject();
             ois.close();
-            System.out.println("Objekt uspješno pročitan!");
-            System.out.println(gamer.getPlayerOne().getNick());
+            System.out.println(gamer.getPlayer().getNick());
         } catch (IOException | ClassNotFoundException e) {
             e.printStackTrace();
         }
@@ -44,7 +41,6 @@ public class Save {
         try (ObjectOutputStream outStream = new ObjectOutputStream(new FileOutputStream("yambPapers.dat"))) {
             outStream.writeObject(yambPapers);
             outStream.close();
-            System.out.println("uspio serijal");
         } catch (IOException ex) {
             ex.printStackTrace();
         }
@@ -54,13 +50,11 @@ public class Save {
         List<YambPaper> yambPapers = new LinkedList<>();
 
         try {
-            ObjectInputStream ois = new ObjectInputStream(new FileInputStream(
-                    "yambPapers.dat"));
+            ObjectInputStream ois = new ObjectInputStream(
+                    new FileInputStream("yambPapers.dat"));
             yambPapers = (List<YambPaper>) ois.readObject();
             ois.close();
-            System.out.println("Objekt uspješno pročitan!");
         } catch (IOException | ClassNotFoundException e) {
-            //e.printStackTrace();
             return yambPapers;
         }
         return yambPapers;

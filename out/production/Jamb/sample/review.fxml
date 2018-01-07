@@ -4,52 +4,137 @@
 <?import javafx.scene.layout.*?>
 
 <?import javafx.collections.FXCollections?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.geometry.Insets?>
 <BorderPane xmlns="http://javafx.com/javafx"
             xmlns:fx="http://javafx.com/fxml"
             fx:controller="sample.ReviewController"
-            prefHeight="800.0" prefWidth="600.0">
+            prefHeight="750.0" prefWidth="400.0"
+            style="-fx-background-color: darkslategray">
 
 
     <center>
         <GridPane alignment="CENTER" hgap="10" vgap="10"
-                  stylesheets="@styles.css" fx:id="grid">
+                  stylesheets="@beautify/styles.css" fx:id="grid">
             <Label GridPane.rowIndex="0" GridPane.columnIndex="0" text="          "/>
-            <Label GridPane.rowIndex="0" GridPane.columnIndex="1" text=" Down "/>
-            <Label GridPane.rowIndex="0" GridPane.columnIndex="2" text="  Up  "/>
-            <Label GridPane.rowIndex="0" GridPane.columnIndex="3" text=" Free "/>
+            <Label GridPane.rowIndex="0" GridPane.columnIndex="1" text="">
+                <padding>
+                    <Insets left="5.0" />
+                </padding>
+                <graphic>
+                    <ImageView fitHeight="30" fitWidth="30">
+                        <image>
+                            <Image url="@png/down.png" />
+                        </image>
+                    </ImageView>
+                </graphic>
+            </Label>
+            <Label GridPane.rowIndex="0" GridPane.columnIndex="2" text="">
+                <padding>
+                    <Insets left="5.0" />
+                </padding>
+                <graphic>
+                    <ImageView fitHeight="30" fitWidth="30">
+                        <image>
+                            <Image url="@png/up.png" />
+                        </image>
+                    </ImageView>
+                </graphic>
+            </Label>
+            <Label GridPane.rowIndex="0" GridPane.columnIndex="3" text="">
+                <padding>
+                    <Insets left="5.0" />
+                </padding>
+                <graphic>
+                    <ImageView fitHeight="30" fitWidth="30">
+                        <image>
+                            <Image url="@png/data-in-both-directions.png" />
+                        </image>
+                    </ImageView>
+                </graphic>
+            </Label>
             <Label GridPane.rowIndex="0" GridPane.columnIndex="4" text=" Call "/>
 
-            <Label GridPane.rowIndex="1" GridPane.columnIndex="0" text="Ones"/>
+            <Label GridPane.rowIndex="1" GridPane.columnIndex="0" text="">
+                <graphic>
+                    <ImageView fitHeight="30" fitWidth="30">
+                        <image>
+                            <Image url="@png/Alea_1.png" />
+                        </image>
+                    </ImageView>
+                </graphic>
+            </Label>
             <Button GridPane.rowIndex="1" GridPane.columnIndex="1" onAction="#setText" fx:id="d1"/>
             <Button GridPane.rowIndex="1" GridPane.columnIndex="2" onAction="#setText" fx:id="u1"/>
             <Button GridPane.rowIndex="1" GridPane.columnIndex="3" onAction="#setText" fx:id="f1"/>
             <Button GridPane.rowIndex="1" GridPane.columnIndex="4" onAction="#setText" fx:id="c1"/>
 
-            <Label GridPane.rowIndex="2" GridPane.columnIndex="0" text="Twos"/>
+            <Label GridPane.rowIndex="2" GridPane.columnIndex="0" text="">
+                <graphic>
+                    <ImageView fitHeight="30" fitWidth="30">
+                        <image>
+                            <Image url="@png/Alea_2.png" />
+                        </image>
+                    </ImageView>
+                </graphic>
+            </Label>
             <Button GridPane.rowIndex="2" GridPane.columnIndex="1" onAction="#setText" fx:id="d2"/>
             <Button GridPane.rowIndex="2" GridPane.columnIndex="2" onAction="#setText" fx:id="u2"/>
             <Button GridPane.rowIndex="2" GridPane.columnIndex="3" onAction="#setText" fx:id="f2"/>
             <Button GridPane.rowIndex="2" GridPane.columnIndex="4" onAction="#setText" fx:id="c2"/>
 
-            <Label GridPane.rowIndex="3" GridPane.columnIndex="0" text="Threes"/>
+            <Label GridPane.rowIndex="3" GridPane.columnIndex="0" text="">
+                <graphic>
+                    <ImageView fitHeight="30" fitWidth="30">
+                        <image>
+                            <Image url="@png/Alea_3.png" />
+                        </image>
+                    </ImageView>
+                </graphic>
+            </Label>
             <Button GridPane.rowIndex="3" GridPane.columnIndex="1" onAction="#setText" fx:id="d3"/>
             <Button GridPane.rowIndex="3" GridPane.columnIndex="2" onAction="#setText" fx:id="u3"/>
             <Button GridPane.rowIndex="3" GridPane.columnIndex="3" onAction="#setText" fx:id="f3"/>
             <Button GridPane.rowIndex="3" GridPane.columnIndex="4" onAction="#setText" fx:id="c3"/>
 
-            <Label GridPane.rowIndex="4" GridPane.columnIndex="0" text="Fours"/>
+            <Label GridPane.rowIndex="4" GridPane.columnIndex="0" text="">
+                <graphic>
+                    <ImageView fitHeight="30" fitWidth="30">
+                        <image>
+                            <Image url="@png/Alea_4.png" />
+                        </image>
+                    </ImageView>
+                </graphic>
+            </Label>
             <Button GridPane.rowIndex="4" GridPane.columnIndex="1" onAction="#setText" fx:id="d4"/>
             <Button GridPane.rowIndex="4" GridPane.columnIndex="2" onAction="#setText" fx:id="u4"/>
             <Button GridPane.rowIndex="4" GridPane.columnIndex="3" onAction="#setText" fx:id="f4"/>
             <Button GridPane.rowIndex="4" GridPane.columnIndex="4" onAction="#setText" fx:id="c4"/>
 
-            <Label GridPane.rowIndex="5" GridPane.columnIndex="0" text="Fives"/>
+            <Label GridPane.rowIndex="5" GridPane.columnIndex="0" text="">
+                <graphic>
+                    <ImageView fitHeight="30" fitWidth="30">
+                        <image>
+                            <Image url="@png/Alea_5.png" />
+                        </image>
+                    </ImageView>
+                </graphic>
+            </Label>
             <Button GridPane.rowIndex="5" GridPane.columnIndex="1" onAction="#setText" fx:id="d5"/>
             <Button GridPane.rowIndex="5" GridPane.columnIndex="2" onAction="#setText" fx:id="u5"/>
             <Button GridPane.rowIndex="5" GridPane.columnIndex="3" onAction="#setText" fx:id="f5"/>
             <Button GridPane.rowIndex="5" GridPane.columnIndex="4" onAction="#setText" fx:id="c5"/>
 
-            <Label GridPane.rowIndex="6" GridPane.columnIndex="0" text="Sixes"/>
+            <Label GridPane.rowIndex="6" GridPane.columnIndex="0" text="">
+                <graphic>
+                    <ImageView fitHeight="30" fitWidth="30">
+                        <image>
+                            <Image url="@png/Alea_6.png" />
+                        </image>
+                    </ImageView>
+                </graphic>
+            </Label>
             <Button GridPane.rowIndex="6" GridPane.columnIndex="1" onAction="#setText" fx:id="d6"/>
             <Button GridPane.rowIndex="6" GridPane.columnIndex="2" onAction="#setText" fx:id="u6"/>
             <Button GridPane.rowIndex="6" GridPane.columnIndex="3" onAction="#setText" fx:id="f6"/>
@@ -115,7 +200,9 @@
             <Button GridPane.rowIndex="16" GridPane.columnIndex="3" styleClass="orange-button" fx:id="totalSpecialFree"/>
             <Button GridPane.rowIndex="16" GridPane.columnIndex="4" styleClass="orange-button" fx:id="totalSpecialCall"/>
 
-            <Label GridPane.rowIndex="17" GridPane.columnIndex="2" GridPane.columnSpan="2" text="Grand Total"/>
+            <HBox GridPane.rowIndex="17" GridPane.columnIndex="2" GridPane.columnSpan="2" alignment="CENTER_RIGHT">
+                <Label text="Grand Total"/>
+            </HBox>
             <Button GridPane.rowIndex="17" GridPane.columnIndex="4" fx:id="grandTotalBtn" style="-fx-background-color: red" text="0" wrapText="true"/>
         </GridPane>
     </center>

@@ -21,35 +21,18 @@ public class XmlRead {
     public static List<YambPaper> getYambPaperXml() throws FileNotFoundException, ParserConfigurationException, SAXException, IOException {
         SAXParserFactory factory = SAXParserFactory.newInstance();
 
-        InputStream xmlInput  = new FileInputStream("file2.xml");
+        InputStream xmlInput  = new FileInputStream("reviewYamb.xml");
 
         SAXParser saxParser = factory.newSAXParser();
         SaxHandler2 handler   = new SaxHandler2();
         saxParser.parse(xmlInput, handler);
 
         return handler.yambPapers();
-
-//        System.out.println(handler.yambPapers().size());
-//        for(YambPaper g : handler.yambPapers()){
-//            System.out.println("DOWN");
-//            System.out.println(g.getDown());
-//            System.out.println("UP");
-//            System.out.println(g.getUp());
-//            System.out.println("FREE");
-//            System.out.println(g.getFree());
-//            System.out.println("CALL");
-//            System.out.println(g.getCall());
-//        }
     }
 }
 
 class SaxHandler2 extends DefaultHandler {
-//    private List<Gradjanin> gradjani = new LinkedList<>();
     private List<YambPaper> yambPapers = new LinkedList<>();
-
-//    private Gradjanin trenutniGradjanin;
-//    private Adresa trenutnaAdresa;
-//    private String trenutniElement;
 
     private YambPaper trenutniPapir;
     private YambLine trenutniDown;
@@ -106,8 +89,6 @@ class SaxHandler2 extends DefaultHandler {
 
         if ("lineDown".equals(qName)) {
             trenutniPapir.setDown(trenutniDown);
-//            System.out.println("CHECK");
-//            System.out.println(trenutniPapir.getDown().getOnes());
             trenutniDown = null;
             return;
         }
@@ -130,18 +111,6 @@ class SaxHandler2 extends DefaultHandler {
             return;
         }
 
-//        if ("YambPaper".equals(qName)) {
-//            trenutniPapir.setDown(trenutniDown);
-//            trenutniDown = null;
-//            trenutniPapir.setDown(trenutniUp);
-//            trenutniUp = null;
-//            trenutniPapir.setDown(trenutniFree);
-//            trenutniFree = null;
-//            trenutniPapir.setDown(trenutniCall);
-//            trenutniCall = null;
-//            return;
-//        }
-
         trenutniElement = null;
     }
 
@@ -153,9 +122,6 @@ class SaxHandler2 extends DefaultHandler {
         switch(trenutniElement) {
             //DOWN
             case "onesD" : trenutniDown.setOnes(Integer.valueOf(value));
-//                System.out.println(value);
-//                System.out.println("TD");
-                System.out.println(trenutniDown.getOnes());
                 break;
             case "twosD" : trenutniDown.setTwos(Integer.valueOf(value)); break;
             case "threesD" : trenutniDown.setThrees(Integer.valueOf(value)); break;
@@ -211,8 +177,6 @@ class SaxHandler2 extends DefaultHandler {
             case "fullC" : trenutniCall.setFull(Integer.valueOf(value)); break;
             case "pokerC" : trenutniCall.setPoker(Integer.valueOf(value)); break;
             case "yambC" : trenutniCall.setYamb(Integer.valueOf(value)); break;
-
-
         }
     }
 }

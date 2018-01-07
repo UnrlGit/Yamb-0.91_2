@@ -329,17 +329,12 @@ public class YambLine implements Serializable {
         return total;
     }
 
-
-
     public boolean isTotalScoreComplete(){
         if(this.singleDiceTypeTotal == -1 || this.minMaxCalculation == -1 || this.lowerTotal == -1){
             return false;
         }
         return true;
     }
-
-
-
 
     //number at array place[1] == count number of ones
     private int[] getSortedDice(Dice[] diceSet){
@@ -373,8 +368,6 @@ public class YambLine implements Serializable {
         }
         return diceArray;
     }
-
-
 
     //SETTERS FOR XML
 

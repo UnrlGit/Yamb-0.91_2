@@ -22,7 +22,7 @@
 
 <BorderPane fx:id="mainBorderPane" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
     <left>
-        <GridPane alignment="CENTER" hgap="10" stylesheets="@styles.css" vgap="10">
+        <GridPane alignment="CENTER" hgap="10" stylesheets="@beautify/styles.css" vgap="10">
             <padding>
                 <Insets left="10.0" />
             </padding>
@@ -248,7 +248,7 @@
     </left>
 
     <center>
-        <BorderPane fx:id="imageBorderPane" stylesheets="@styles2.css">
+        <BorderPane fx:id="imageBorderPane" stylesheets="@beautify/styles2.css">
             <top>
                 <HBox alignment="CENTER">
                     <padding>
@@ -258,7 +258,7 @@
                 </HBox>
             </top>
             <center>
-                <GridPane alignment="CENTER" hgap="15" stylesheets="@styles3.css" vgap="10">
+                <GridPane alignment="CENTER" hgap="15" stylesheets="@beautify/styles3.css" vgap="10">
                     <padding>
                         <Insets bottom="0" />
                     </padding>

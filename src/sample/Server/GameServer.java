@@ -1,12 +1,8 @@
 package sample.Server;
 
-import sample.models.Dice;
-import sample.models.DiceSet;
-
 import java.io.IOException;
 import java.net.ServerSocket;
 import java.rmi.Remote;
-import java.rmi.RemoteException;
 import java.rmi.registry.LocateRegistry;
 import java.rmi.registry.Registry;
 import java.rmi.server.UnicastRemoteObject;
@@ -23,18 +19,14 @@ public class GameServer{
         System.err.println("Server ready");
         try {
             NetworkHandler obj = new NetworkHandler();
-
             DiceRollService stub = (DiceRollService) UnicastRemoteObject.exportObject((Remote)obj, 0);
-            Registry registry = LocateRegistry.createRegistry(5532);
+            Registry registry = LocateRegistry.createRegistry(RMI_PORT);
             registry.bind(IMPLEMENTATION_NAME, stub);
         } catch (Exception e) {
             System.err.println("Server exception: " + e.toString());
             e.printStackTrace();
         }
-
-        runRMI();
         runNetwork();
-
     }
 
     private static void runNetwork() {
@@ -46,11 +38,4 @@ public class GameServer{
             System.out.println("Server exception " + e.getMessage());
         }
     }
-
-    private synchronized static void runRMI() {
-
-    }
-
-
-
 }

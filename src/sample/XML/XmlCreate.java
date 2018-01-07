@@ -23,7 +23,7 @@ public class XmlCreate {
 
         Document xmlDokument = kreirajDokument(yambPapers);
 
-        spremi(xmlDokument, "file2.xml");
+        spremi(xmlDokument, "reviewYamb.xml");
     }
 
     private static Document kreirajDokument(List<YambPaper> yambPapers) throws ParserConfigurationException {
@@ -32,14 +32,10 @@ public class XmlCreate {
 
         Document doc = docBuilder.newDocument();
 
-        // korjenski element <Gradjani>
-//        Element gradjani = doc.createElement("Gradjani");
         Element yambPaper = doc.createElement("YambPapers");
 
-        // postavi gradjane kao glavni element
         doc.appendChild(yambPaper);
 
-//        List<YambPaper> yambPaperList = getYambPapers();
         List<YambPaper> yambPaperList = yambPapers;
 
         for(YambPaper paper : yambPaperList) {
@@ -51,31 +47,6 @@ public class XmlCreate {
     }
     private static Element napraviNoviGradjaniElement(Document doc, YambPaper g) {
         Element yambPaper = doc.createElement("YambPaper");
-
-//        gradjanin.setAttribute("spol", g.spol.name());
-
-//        Element oib = doc.createElement("oib");
-//        oib.appendChild(doc.createTextNode(g.oib));
-//        gradjanin.appendChild(oib);
-//
-//        Element prezime = doc.createElement("prezime");
-//        prezime.appendChild(doc.createTextNode(g.prezime));
-//        gradjanin.appendChild(prezime);
-//
-//        Element ime = doc.createElement("ime");
-//        ime.appendChild(doc.createTextNode(g.ime));
-//        gradjanin.appendChild(ime);
-
-        // adresa: ulica, grad(pbr=...)
-//        Element adresa = doc.createElement("adresa");
-//        Element ulica = doc.createElement("ulica");
-//        ulica.appendChild(doc.createTextNode(g.adresa.ulica));
-//        Element grad = doc.createElement("grad");
-//        grad.appendChild(doc.createTextNode(g.adresa.grad));
-//        grad.setAttribute("pbr", String.valueOf(g.adresa.postanskiBroj));
-//        adresa.appendChild(ulica);
-//        adresa.appendChild(grad);
-//        yambPaper.appendChild(adresa);
         // DOWN
 
         //DOWN
@@ -272,7 +243,6 @@ public class XmlCreate {
     }
 
     private static void spremi(Document doc, String nazivDatoteke) throws TransformerConfigurationException, TransformerException {
-        // write the content into xml file
         TransformerFactory transformerFactory = TransformerFactory.newInstance();
         Transformer transformer = transformerFactory.newTransformer();
 
@@ -280,7 +250,7 @@ public class XmlCreate {
         transformer.setOutputProperty("{http://xml.apache.org/xslt}indent-amount", "2");
 
         DOMSource source = new DOMSource(doc);
-        StreamResult result = new StreamResult(new File("file2.xml"));
+        StreamResult result = new StreamResult(new File("reviewYamb.xml"));
 
         transformer.transform(source, result);
         transformer.transform(source, new StreamResult(System.out));

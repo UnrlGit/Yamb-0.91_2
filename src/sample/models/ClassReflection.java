@@ -13,15 +13,7 @@ public class ClassReflection {
 
         try {
             Class<?> klasa = Class.forName(reflectClass);
-//            Object generickiObjekt = klasa.newInstance();
 
-//            if (generickiObjekt instanceof YambPaper || generickiObjekt instanceof Player) {
-//                YambPaper objekt = (YambPaper) generickiObjekt;
-
-//                objekt.setDatum(LocalDate.now());
-//                System.out.println("Današnji datum je : " + objekt.getDatum());
-
-                // CLASS NAME
 
                 sb.append("Class name: " + klasa.getSimpleName());
                 sb.append(System.getProperty("line.separator"));
@@ -150,13 +142,6 @@ public class ClassReflection {
 
                 }
                 System.out.println(sb.toString());
-
-//            } else {
-//                System.out.println("Traženi objekt nije tipa 'TestingClass'");
-//                System.exit(0);
-//            }
-
-
         } catch (ClassNotFoundException  ex) {
             ex.printStackTrace();
         }

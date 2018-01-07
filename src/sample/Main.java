@@ -5,10 +5,9 @@ import javafx.application.Platform;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Alert;
-import javafx.scene.control.ButtonBar;
-import javafx.scene.control.ButtonType;
-import javafx.scene.control.TextInputDialog;
+import javafx.scene.control.*;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 import sample.enums.GameType;
 import sample.models.Dice;
@@ -49,7 +48,6 @@ public class Main extends Application {
 
             Optional<String> playerName = dialog.showAndWait();
             if (playerName.isPresent()) {
-                System.out.println("Your name: " + playerName.get());
                 game = new Game(new Player(playerName.get(), true), GameType.MULTIPLAYER);
             } else {
                 System.exit(0);
@@ -60,9 +58,10 @@ public class Main extends Application {
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("sample.fxml"));
         Parent root = fxmlLoader.load();
         Controller controller = fxmlLoader.getController();
-        controller.setPlayer(game.getPlayerOne());
+        controller.setPlayer(game.getPlayer());
         controller.setGame(game);
-        primaryStage.setTitle("Jamb: " + game.getPlayerOne().getNick());
+        primaryStage.setTitle("Yamb: " + game.getPlayer().getNick());
+        primaryStage.getIcons().add(new Image("sample/png/unnamed.png"));
         primaryStage.setScene(new Scene(root, 700, 800));
         primaryStage.setOnCloseRequest(t -> Platform.exit());
         primaryStage.show();
@@ -104,7 +103,6 @@ public class Main extends Application {
                     "yamb.dat"));
             game = (Game) ois.readObject();
             ois.close();
-            System.out.println("Objekt uspješno pročitan!");
         } catch (IOException | ClassNotFoundException e) {
           //  e.printStackTrace();
             game = new Game(new Player("SinglePlayer", true), GameType.SINGLEPLAYER_LOAD);
@@ -124,18 +122,16 @@ public class Main extends Application {
 
         ButtonType buttonTypeOne = new ButtonType("SinglePlayer");
         ButtonType buttonTypeTwo = new ButtonType("MultiPlayer");
-
         ButtonType buttonTypeCancel = new ButtonType("Exit", ButtonBar.ButtonData.CANCEL_CLOSE);
+
 
         alert.getButtonTypes().setAll(buttonTypeOne, buttonTypeTwo, buttonTypeCancel);
 
         Optional<ButtonType> result = alert.showAndWait();
         if (result.get() == buttonTypeOne) {
             gameType = GameType.SINGLEPLAYER;
-            System.out.println("SP");
         } else if (result.get() == buttonTypeTwo) {
             gameType = GameType.MULTIPLAYER;
-            System.out.println("MP");
         } else {
             System.exit(0);
         }

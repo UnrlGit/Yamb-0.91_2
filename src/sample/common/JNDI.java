@@ -1,5 +1,7 @@
 package sample.common;
 
+import sample.unused.Constants;
+
 import javax.naming.Context;
 import javax.naming.InitialContext;
 import javax.naming.NamingException;

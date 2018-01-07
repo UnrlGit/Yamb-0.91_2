@@ -1,11 +1,9 @@
 package sample;
 
-import javafx.collections.ObservableArray;
-import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
-import javafx.scene.control.ComboBox;
+import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
 import org.xml.sax.SAXException;
@@ -13,7 +11,6 @@ import sample.XML.XmlRead;
 import sample.models.YambPaper;
 import javax.xml.parsers.ParserConfigurationException;
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.LinkedList;
 
 public class ReviewController {
@@ -514,5 +511,9 @@ public class ReviewController {
             uYamb.setText("");
             fYamb.setText("");
             cYamb.setText("");
+    }
+
+
+    public void initialize(){
     }
 }

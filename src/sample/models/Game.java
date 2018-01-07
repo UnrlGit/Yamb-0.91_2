@@ -1,6 +1,5 @@
 package sample.models;
 
-import javafx.scene.control.ToggleButton;
 import sample.enums.GameType;
 import sample.enums.RollCount;
 
@@ -38,8 +37,8 @@ public class Game implements Serializable {
 
     private static final int NUMBER_OF_TURNS = 13;
 
-    private Player playerOne;
-    private Player playerTwo;
+    private Player player;
+//    private Player playerTwo;
     private DiceSet diceSet;
     private RollCount playerOneRollCount = RollCount.ZERO;
     private RollCount playerTwoRollCount = RollCount.ZERO;
@@ -50,8 +49,8 @@ public class Game implements Serializable {
     private int[] playerOneLastRoll;
     private int[] playerTwoLastRoll;
 
-    public Game(Player playerOne, GameType gameType) {
-        this.playerOne = playerOne;
+    public Game(Player player, GameType gameType) {
+        this.player = player;
         //this.playerTwo = playerTwo;
         this.diceSet = new DiceSet();
         this.playerOneRolling = false;
@@ -121,22 +120,22 @@ public class Game implements Serializable {
         this.diceSpinning = diceSpinning;
     }
 
-    public Player getPlayerOne() {
-        return playerOne;
+    public Player getPlayer() {
+        return player;
     }
 
-    public void setPlayerOne(Player playerOne) {
-        this.playerOne = playerOne;
+    public void setPlayer(Player player) {
+        this.player = player;
     }
 
-    public Player getPlayerTwo() {
-        return playerTwo;
-    }
+//    public Player getPlayerTwo() {
+//        return playerTwo;
+//    }
 
 
-    public void setPlayerTwo(Player playerTwo) {
-        this.playerTwo = playerTwo;
-    }
+//    public void setPlayerTwo(Player playerTwo) {
+//        this.playerTwo = playerTwo;
+//    }
 
     public DiceSet getDiceSet() {
         return diceSet;
@@ -174,7 +173,7 @@ public class Game implements Serializable {
                     playerOneLastRoll[i] = rollValue;
                     diceSet.getDices()[i].setValue(rollValue);
                 }
-                playerOne.getYambPaper().setWrittenSomething(false);
+                player.getYambPaper().setWrittenSomething(false);
                 playerOneRollCount = RollCount.FIRST;
                 return;
             }
@@ -204,7 +203,7 @@ public class Game implements Serializable {
             if(playerOneRollCount == RollCount.RESET)
             {
                 playerOneRollCount = RollCount.ZERO;
-                getPlayerOne().getYambPaper().setWrittenSomething(true);
+                getPlayer().getYambPaper().setWrittenSomething(true);
                 playerOneRolling = false;
                 notifyAll();
             }
@@ -212,66 +211,66 @@ public class Game implements Serializable {
         }
     }
 
-    public void playerTwoRoll(Dice[] oldRoll) {
-        if(playerTwoRollCount == RollCount.THIRD) {
-            return;
-        }
-        synchronized (this) {
-            if (playerOneRolling) {
-                try {
-                    System.out.println(playerOneLastRoll[0] + " " +playerOneLastRoll[1] + " " +playerOneLastRoll[2]);
-                    setPlayerTwoCanRoll(false);
-                    System.out.println("Player one rolling");
-                    wait();
-                    System.out.println("Player one done rolling");
-                    setPlayerTwoCanRoll(true);
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                }
-            }
-            playerTwoRolling = true;
-            this.getDiceSet().setDices(oldRoll);
-            if (playerTwoRollCount == RollCount.ZERO) {
-                for (int i = 0; i < 5; i++) {
-                    int rollValue = (int) (Math.random() * 6) + 1;
-                    diceSet.getDices()[i].setValue(rollValue);
-                    playerTwoLastRoll[i] = rollValue;
-
-                }
-                playerTwo.getYambPaper().setWrittenSomething(false);
-                playerTwoRollCount = RollCount.FIRST;
-                return;
-            }
-            if (playerTwoRollCount == RollCount.FIRST) {
-                for (int i = 0; i < 5; i++) {
-                    if (diceSet.getDices()[i].isRoll()) {
-                        int rollValue = (int) (Math.random() * 6) + 1;
-                        diceSet.getDices()[i].setValue(rollValue);
-                        playerTwoLastRoll[i] = rollValue;
-                    }
-                }
-                playerTwoRollCount=RollCount.SECOND;
-                return;
-            }
-            if (playerTwoRollCount == RollCount.SECOND) {
-                for (int i = 0; i < 5; i++) {
-                    if (diceSet.getDices()[i].isRoll()) {
-                        int rollValue = (int) (Math.random() * 6) + 1;
-                        diceSet.getDices()[i].setValue(rollValue);
-                        playerTwoLastRoll[i] = rollValue;
-                    }
-                }
-                playerTwoRollCount = RollCount.THIRD;
-            }
-            if(playerTwoRollCount == RollCount.RESET)
-            {
-                playerTwoRollCount = RollCount.ZERO;
-                getPlayerTwo().getYambPaper().setWrittenSomething(true);
-            }
-            playerTwoRolling = false;
-            notifyAll();
-        }
-    }
+//    public void playerTwoRoll(Dice[] oldRoll) {
+//        if(playerTwoRollCount == RollCount.THIRD) {
+//            return;
+//        }
+//        synchronized (this) {
+//            if (playerOneRolling) {
+//                try {
+//                    System.out.println(playerOneLastRoll[0] + " " +playerOneLastRoll[1] + " " +playerOneLastRoll[2]);
+//                    setPlayerTwoCanRoll(false);
+//                    System.out.println("Player one rolling");
+//                    wait();
+//                    System.out.println("Player one done rolling");
+//                    setPlayerTwoCanRoll(true);
+//                } catch (InterruptedException e) {
+//                    e.printStackTrace();
+//                }
+//            }
+//            playerTwoRolling = true;
+//            this.getDiceSet().setDices(oldRoll);
+//            if (playerTwoRollCount == RollCount.ZERO) {
+//                for (int i = 0; i < 5; i++) {
+//                    int rollValue = (int) (Math.random() * 6) + 1;
+//                    diceSet.getDices()[i].setValue(rollValue);
+//                    playerTwoLastRoll[i] = rollValue;
+//
+//                }
+//                playerTwo.getYambPaper().setWrittenSomething(false);
+//                playerTwoRollCount = RollCount.FIRST;
+//                return;
+//            }
+//            if (playerTwoRollCount == RollCount.FIRST) {
+//                for (int i = 0; i < 5; i++) {
+//                    if (diceSet.getDices()[i].isRoll()) {
+//                        int rollValue = (int) (Math.random() * 6) + 1;
+//                        diceSet.getDices()[i].setValue(rollValue);
+//                        playerTwoLastRoll[i] = rollValue;
+//                    }
+//                }
+//                playerTwoRollCount=RollCount.SECOND;
+//                return;
+//            }
+//            if (playerTwoRollCount == RollCount.SECOND) {
+//                for (int i = 0; i < 5; i++) {
+//                    if (diceSet.getDices()[i].isRoll()) {
+//                        int rollValue = (int) (Math.random() * 6) + 1;
+//                        diceSet.getDices()[i].setValue(rollValue);
+//                        playerTwoLastRoll[i] = rollValue;
+//                    }
+//                }
+//                playerTwoRollCount = RollCount.THIRD;
+//            }
+//            if(playerTwoRollCount == RollCount.RESET)
+//            {
+//                playerTwoRollCount = RollCount.ZERO;
+//                getPlayerTwo().getYambPaper().setWrittenSomething(true);
+//            }
+//            playerTwoRolling = false;
+//            notifyAll();
+//        }
+//    }
 
 
 }

@@ -49,5 +49,4 @@ public class SimpleServerPlayerData implements Serializable {
         this.gameComplete = gameComplete;
     }
 
-
 }
