@@ -1,0 +1,20 @@
+.button{
+    -fx-background-color: #87a9be;
+    -fx-text-fill: white;
+    -fx-content-display: center;
+    -fx-font-weight: bold;
+    -fx-font: 12 comic-sans-ms;
+}
+
+.text-area{
+    -fx-background-color: #87a9be;
+    -fx-text-fill: white;
+    -fx-control-inner-background:darkslategrey;
+}
+
+.label-call{
+    /*-fx-text-fill: #87a9be;*/
+    -fx-text-fill: red;
+    -fx-font-size: 1.5em;
+    -fx-font-style: oblique;
+}

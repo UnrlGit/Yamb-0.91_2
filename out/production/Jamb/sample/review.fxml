@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import javafx.collections.FXCollections?>
+<BorderPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="sample.ReviewController"
+            prefHeight="800.0" prefWidth="600.0">
+
+
+    <center>
+        <GridPane alignment="CENTER" hgap="10" vgap="10"
+                  stylesheets="@styles.css" fx:id="grid">
+            <Label GridPane.rowIndex="0" GridPane.columnIndex="0" text="          "/>
+            <Label GridPane.rowIndex="0" GridPane.columnIndex="1" text=" Down "/>
+            <Label GridPane.rowIndex="0" GridPane.columnIndex="2" text="  Up  "/>
+            <Label GridPane.rowIndex="0" GridPane.columnIndex="3" text=" Free "/>
+            <Label GridPane.rowIndex="0" GridPane.columnIndex="4" text=" Call "/>
+
+            <Label GridPane.rowIndex="1" GridPane.columnIndex="0" text="Ones"/>
+            <Button GridPane.rowIndex="1" GridPane.columnIndex="1" onAction="#setText" fx:id="d1"/>
+            <Button GridPane.rowIndex="1" GridPane.columnIndex="2" onAction="#setText" fx:id="u1"/>
+            <Button GridPane.rowIndex="1" GridPane.columnIndex="3" onAction="#setText" fx:id="f1"/>
+            <Button GridPane.rowIndex="1" GridPane.columnIndex="4" onAction="#setText" fx:id="c1"/>
+
+            <Label GridPane.rowIndex="2" GridPane.columnIndex="0" text="Twos"/>
+            <Button GridPane.rowIndex="2" GridPane.columnIndex="1" onAction="#setText" fx:id="d2"/>
+            <Button GridPane.rowIndex="2" GridPane.columnIndex="2" onAction="#setText" fx:id="u2"/>
+            <Button GridPane.rowIndex="2" GridPane.columnIndex="3" onAction="#setText" fx:id="f2"/>
+            <Button GridPane.rowIndex="2" GridPane.columnIndex="4" onAction="#setText" fx:id="c2"/>
+
+            <Label GridPane.rowIndex="3" GridPane.columnIndex="0" text="Threes"/>
+            <Button GridPane.rowIndex="3" GridPane.columnIndex="1" onAction="#setText" fx:id="d3"/>
+            <Button GridPane.rowIndex="3" GridPane.columnIndex="2" onAction="#setText" fx:id="u3"/>
+            <Button GridPane.rowIndex="3" GridPane.columnIndex="3" onAction="#setText" fx:id="f3"/>
+            <Button GridPane.rowIndex="3" GridPane.columnIndex="4" onAction="#setText" fx:id="c3"/>
+
+            <Label GridPane.rowIndex="4" GridPane.columnIndex="0" text="Fours"/>
+            <Button GridPane.rowIndex="4" GridPane.columnIndex="1" onAction="#setText" fx:id="d4"/>
+            <Button GridPane.rowIndex="4" GridPane.columnIndex="2" onAction="#setText" fx:id="u4"/>
+            <Button GridPane.rowIndex="4" GridPane.columnIndex="3" onAction="#setText" fx:id="f4"/>
+            <Button GridPane.rowIndex="4" GridPane.columnIndex="4" onAction="#setText" fx:id="c4"/>
+
+            <Label GridPane.rowIndex="5" GridPane.columnIndex="0" text="Fives"/>
+            <Button GridPane.rowIndex="5" GridPane.columnIndex="1" onAction="#setText" fx:id="d5"/>
+            <Button GridPane.rowIndex="5" GridPane.columnIndex="2" onAction="#setText" fx:id="u5"/>
+            <Button GridPane.rowIndex="5" GridPane.columnIndex="3" onAction="#setText" fx:id="f5"/>
+            <Button GridPane.rowIndex="5" GridPane.columnIndex="4" onAction="#setText" fx:id="c5"/>
+
+            <Label GridPane.rowIndex="6" GridPane.columnIndex="0" text="Sixes"/>
+            <Button GridPane.rowIndex="6" GridPane.columnIndex="1" onAction="#setText" fx:id="d6"/>
+            <Button GridPane.rowIndex="6" GridPane.columnIndex="2" onAction="#setText" fx:id="u6"/>
+            <Button GridPane.rowIndex="6" GridPane.columnIndex="3" onAction="#setText" fx:id="f6"/>
+            <Button GridPane.rowIndex="6" GridPane.columnIndex="4" onAction="#setText" fx:id="c6"/>
+
+            <Label GridPane.rowIndex="7" GridPane.columnIndex="0" text="Total"/>
+            <Button GridPane.rowIndex="7" GridPane.columnIndex="1" styleClass="orange-button" fx:id="totalSingleDown"/>
+            <Button GridPane.rowIndex="7" GridPane.columnIndex="2" styleClass="orange-button" fx:id="totalSingleUp"/>
+            <Button GridPane.rowIndex="7" GridPane.columnIndex="3" styleClass="orange-button" fx:id="totalSingleFree"/>
+            <Button GridPane.rowIndex="7" GridPane.columnIndex="4" styleClass="orange-button" fx:id="totalSingleCall"/>
+
+            <Label GridPane.rowIndex="8" GridPane.columnIndex="0" text="MAX"/>
+            <Button GridPane.rowIndex="8" GridPane.columnIndex="1" onAction="#setText" fx:id="dMax"/>
+            <Button GridPane.rowIndex="8" GridPane.columnIndex="2" onAction="#setText" fx:id="uMax"/>
+            <Button GridPane.rowIndex="8" GridPane.columnIndex="3" onAction="#setText" fx:id="fMax"/>
+            <Button GridPane.rowIndex="8" GridPane.columnIndex="4" onAction="#setText" fx:id="cMax"/>
+
+            <Label GridPane.rowIndex="9" GridPane.columnIndex="0" text="MIN"/>
+            <Button GridPane.rowIndex="9" GridPane.columnIndex="1" onAction="#setText" fx:id="dMin"/>
+            <Button GridPane.rowIndex="9" GridPane.columnIndex="2" onAction="#setText" fx:id="uMin"/>
+            <Button GridPane.rowIndex="9" GridPane.columnIndex="3" onAction="#setText" fx:id="fMin"/>
+            <Button GridPane.rowIndex="9" GridPane.columnIndex="4" onAction="#setText" fx:id="cMin"/>
+
+            <Label GridPane.rowIndex="10" GridPane.columnIndex="0" text="Total"/>
+            <Button GridPane.rowIndex="10" GridPane.columnIndex="1" styleClass="orange-button" fx:id="totalMinMaxDown"/>
+            <Button GridPane.rowIndex="10" GridPane.columnIndex="2" styleClass="orange-button" fx:id="totalMinMaxUp"/>
+            <Button GridPane.rowIndex="10" GridPane.columnIndex="3" styleClass="orange-button" fx:id="totalMinMaxFree"/>
+            <Button GridPane.rowIndex="10" GridPane.columnIndex="4" styleClass="orange-button" fx:id="totalMinMaxCall"/>
+
+            <Label GridPane.rowIndex="11" GridPane.columnIndex="0" text="Pairs"/>
+            <Button GridPane.rowIndex="11" GridPane.columnIndex="1" onAction="#setText" fx:id="dPairs"/>
+            <Button GridPane.rowIndex="11" GridPane.columnIndex="2" onAction="#setText" fx:id="uPairs"/>
+            <Button GridPane.rowIndex="11" GridPane.columnIndex="3" onAction="#setText" fx:id="fPairs"/>
+            <Button GridPane.rowIndex="11" GridPane.columnIndex="4" onAction="#setText" fx:id="cPairs"/>
+
+            <Label GridPane.rowIndex="12" GridPane.columnIndex="0" text="Straight"/>
+            <Button GridPane.rowIndex="12" GridPane.columnIndex="1" onAction="#setText" fx:id="dStraight"/>
+            <Button GridPane.rowIndex="12" GridPane.columnIndex="2" onAction="#setText" fx:id="uStraight"/>
+            <Button GridPane.rowIndex="12" GridPane.columnIndex="3" onAction="#setText" fx:id="fStraight"/>
+            <Button GridPane.rowIndex="12" GridPane.columnIndex="4" onAction="#setText" fx:id="cStraight"/>
+
+            <Label GridPane.rowIndex="13" GridPane.columnIndex="0" text="Full"/>
+            <Button GridPane.rowIndex="13" GridPane.columnIndex="1" onAction="#setText" fx:id="dFull"/>
+            <Button GridPane.rowIndex="13" GridPane.columnIndex="2" onAction="#setText" fx:id="uFull"/>
+            <Button GridPane.rowIndex="13" GridPane.columnIndex="3" onAction="#setText" fx:id="fFull"/>
+            <Button GridPane.rowIndex="13" GridPane.columnIndex="4" onAction="#setText" fx:id="cFull"/>
+
+            <Label GridPane.rowIndex="14" GridPane.columnIndex="0" text="Poker"/>
+            <Button GridPane.rowIndex="14" GridPane.columnIndex="1" onAction="#setText" fx:id="dPoker"/>
+            <Button GridPane.rowIndex="14" GridPane.columnIndex="2" onAction="#setText" fx:id="uPoker"/>
+            <Button GridPane.rowIndex="14" GridPane.columnIndex="3" onAction="#setText" fx:id="fPoker"/>
+            <Button GridPane.rowIndex="14" GridPane.columnIndex="4" onAction="#setText" fx:id="cPoker"/>
+
+            <Label GridPane.rowIndex="15" GridPane.columnIndex="0" text="Yamb"/>
+            <Button GridPane.rowIndex="15" GridPane.columnIndex="1" onAction="#setText" fx:id="dYamb"/>
+            <Button GridPane.rowIndex="15" GridPane.columnIndex="2" onAction="#setText" fx:id="uYamb"/>
+            <Button GridPane.rowIndex="15" GridPane.columnIndex="3" onAction="#setText" fx:id="fYamb"/>
+            <Button GridPane.rowIndex="15" GridPane.columnIndex="4" onAction="#setText" fx:id="cYamb"/>
+
+            <Label GridPane.rowIndex="16" GridPane.columnIndex="0" text="Total"/>
+            <Button GridPane.rowIndex="16" GridPane.columnIndex="1" styleClass="orange-button" fx:id="totalSpecialDown"/>
+            <Button GridPane.rowIndex="16" GridPane.columnIndex="2" styleClass="orange-button" fx:id="totalSpecialUp"/>
+            <Button GridPane.rowIndex="16" GridPane.columnIndex="3" styleClass="orange-button" fx:id="totalSpecialFree"/>
+            <Button GridPane.rowIndex="16" GridPane.columnIndex="4" styleClass="orange-button" fx:id="totalSpecialCall"/>
+
+            <Label GridPane.rowIndex="17" GridPane.columnIndex="2" GridPane.columnSpan="2" text="Grand Total"/>
+            <Button GridPane.rowIndex="17" GridPane.columnIndex="4" fx:id="grandTotalBtn" style="-fx-background-color: red" text="0" wrapText="true"/>
+        </GridPane>
+    </center>
+    <HBox prefWidth="300" minWidth="300">
+        <Button text="Start" onAction="#start" prefWidth="150" minWidth="150" fx:id="btnStart">
+            <tooltip>
+                <Tooltip text="Review"/>
+            </tooltip>
+
+        </Button>
+        <Button text="Next" onAction="#next" prefWidth="150" minWidth="150" fx:id="btnNext" disable="true">
+            <tooltip>
+                <Tooltip text="Next"/>
+            </tooltip>
+
+        </Button>
+
+    </HBox>
+
+
+    <top>
+
+    </top>
+
+</BorderPane>

@@ -1,0 +1,30 @@
+.button{
+    -fx-background-color: #87a9be;
+    -fx-font-weight: bold;
+    -fx-text-fill: white;
+    -fx-pref-width: 40px;
+}
+
+
+.orange-button{
+    -fx-background-color: orange;
+    -fx-font-weight: bold;
+    -fx-text-fill: white;
+    -fx-pref-width: 40px;
+}
+
+.button-roll{
+    -fx-border-color: transparent;
+    -fx-background-color: black;
+
+    -fx-border-width: 0;
+    -fx-background-radius: 0;
+    -fx-font-family:"Segoe UI", Helvetica, Arial, sans-serif;
+    -fx-font-size: 1em; /* 12 */
+    -fx-text-fill: #828282;
+
+}
+
+.label{
+    -fx-text-fill: white;
+}

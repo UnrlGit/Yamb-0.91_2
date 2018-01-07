@@ -1,0 +1,368 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.SeparatorMenuItem?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.ToggleButton?>
+<?import javafx.scene.control.ToolBar?>
+<?import javafx.scene.control.Tooltip?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane fx:id="mainBorderPane" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+    <left>
+        <GridPane alignment="CENTER" hgap="10" stylesheets="@styles.css" vgap="10">
+            <padding>
+                <Insets left="10.0" />
+            </padding>
+            <Label text="          " GridPane.columnIndex="0" GridPane.rowIndex="0" />
+            <Label text="" GridPane.columnIndex="1" GridPane.rowIndex="0">
+                <padding>
+                    <Insets left="5.0" />
+                </padding>
+                <graphic>
+                    <ImageView fitHeight="30" fitWidth="30">
+                        <image>
+                            <Image url="@png/down.png" />
+                        </image>
+                    </ImageView>
+                </graphic>
+            </Label>
+            <Label text="" GridPane.columnIndex="2" GridPane.rowIndex="0">
+                <padding>
+                    <Insets left="5.0" />
+                </padding>
+                <graphic>
+                    <ImageView fitHeight="30" fitWidth="30">
+                        <image>
+                            <Image url="@png/up.png" />
+                        </image>
+                    </ImageView>
+                </graphic>
+            </Label>
+            <Label text="" GridPane.columnIndex="3" GridPane.rowIndex="0">
+                <padding>
+                    <Insets left="5.0"/>
+                </padding>
+                <graphic>
+                    <ImageView fitHeight="30" fitWidth="30">
+                        <image>
+                            <Image url="@png/data-in-both-directions.png" />
+                        </image>
+                    </ImageView>
+                </graphic>
+            </Label>
+            <Label text=" Call " GridPane.columnIndex="4" GridPane.rowIndex="0">
+                <padding>
+                    <Insets left="7"/>
+                </padding>
+            </Label>
+
+            <Label maxHeight="30" maxWidth="30" text="" GridPane.columnIndex="0" GridPane.rowIndex="1">
+                <graphic>
+                    <ImageView fitHeight="30" fitWidth="30">
+                        <image>
+                            <Image url="@png/Alea_1.png" />
+                        </image>
+                    </ImageView>
+                </graphic>
+            </Label>
+            <Button id="d1" fx:id="d1" onAction="#setText" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <Button id="u1" fx:id="u1" onAction="#setText" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+            <Button id="f1" fx:id="f1" onAction="#setText" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+            <Button id="c1" fx:id="c1" onAction="#setText" GridPane.columnIndex="4" GridPane.rowIndex="1" />
+
+            <Label text="" GridPane.columnIndex="0" GridPane.rowIndex="2">
+                <graphic>
+                    <ImageView fitHeight="30" fitWidth="30">
+                        <image>
+                            <Image url="@png/Alea_2.png" />
+                        </image>
+                    </ImageView>
+                </graphic>
+            </Label>
+            <Button id="d2" fx:id="d2" onAction="#setText" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <Button id="u2" fx:id="u2" onAction="#setText" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+            <Button id="f2" fx:id="f2" onAction="#setText" GridPane.columnIndex="3" GridPane.rowIndex="2" />
+            <Button id="c2" fx:id="c2" onAction="#setText" GridPane.columnIndex="4" GridPane.rowIndex="2" />
+
+            <Label text="" GridPane.columnIndex="0" GridPane.rowIndex="3">
+                <graphic>
+                    <ImageView fitHeight="30" fitWidth="30">
+                        <image>
+                            <Image url="@png/Alea_3.png" />
+                        </image>
+                    </ImageView>
+                </graphic>
+            </Label>
+            <Button id="d3" fx:id="d3" onAction="#setText" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+            <Button id="u3" fx:id="u3" onAction="#setText" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+            <Button id="f3" fx:id="f3" onAction="#setText" GridPane.columnIndex="3" GridPane.rowIndex="3" />
+            <Button id="c3" fx:id="c3" onAction="#setText" GridPane.columnIndex="4" GridPane.rowIndex="3" />
+
+            <Label text="" GridPane.columnIndex="0" GridPane.rowIndex="4">
+                <graphic>
+                    <ImageView fitHeight="30" fitWidth="30">
+                        <image>
+                            <Image url="@png/Alea_4.png" />
+                        </image>
+                    </ImageView>
+                </graphic>
+            </Label>
+            <Button id="d4" fx:id="d4" onAction="#setText" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+            <Button id="u4" fx:id="u4" onAction="#setText" GridPane.columnIndex="2" GridPane.rowIndex="4" />
+            <Button id="f4" fx:id="f4" onAction="#setText" GridPane.columnIndex="3" GridPane.rowIndex="4" />
+            <Button id="c4" fx:id="c4" onAction="#setText" GridPane.columnIndex="4" GridPane.rowIndex="4" />
+
+            <Label text="" GridPane.columnIndex="0" GridPane.rowIndex="5">
+                <graphic>
+                    <ImageView fitHeight="30" fitWidth="30">
+                        <image>
+                            <Image url="@png/Alea_5.png" />
+                        </image>
+                    </ImageView>
+                </graphic>
+            </Label>
+            <Button id="d5" fx:id="d5" onAction="#setText" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+            <Button id="u5" fx:id="u5" onAction="#setText" GridPane.columnIndex="2" GridPane.rowIndex="5" />
+            <Button id="f5" fx:id="f5" onAction="#setText" GridPane.columnIndex="3" GridPane.rowIndex="5" />
+            <Button id="c5" fx:id="c5" onAction="#setText" GridPane.columnIndex="4" GridPane.rowIndex="5" />
+
+            <Label text="" GridPane.columnIndex="0" GridPane.rowIndex="6">
+                <graphic>
+                    <ImageView fitHeight="30" fitWidth="30">
+                        <image>
+                            <Image url="@png/Alea_6.png" />
+                        </image>
+                    </ImageView>
+                </graphic>
+            </Label>
+            <Button id="d6" fx:id="d6" onAction="#setText" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+            <Button id="u6" fx:id="u6" onAction="#setText" GridPane.columnIndex="2" GridPane.rowIndex="6" />
+            <Button id="f6" fx:id="f6" onAction="#setText" GridPane.columnIndex="3" GridPane.rowIndex="6" />
+            <Button id="c6" fx:id="c6" onAction="#setText" GridPane.columnIndex="4" GridPane.rowIndex="6" />
+
+            <Label text="Total" GridPane.columnIndex="0" GridPane.rowIndex="7" />
+            <Button fx:id="totalSingleDown" styleClass="orange-button" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+            <Button fx:id="totalSingleUp" styleClass="orange-button" GridPane.columnIndex="2" GridPane.rowIndex="7" />
+            <Button fx:id="totalSingleFree" styleClass="orange-button" GridPane.columnIndex="3" GridPane.rowIndex="7" />
+            <Button fx:id="totalSingleCall" styleClass="orange-button" GridPane.columnIndex="4" GridPane.rowIndex="7" />
+
+            <Label text="MAX" GridPane.columnIndex="0" GridPane.rowIndex="8" />
+            <Button id="dMax" fx:id="dMax" onAction="#setText" GridPane.columnIndex="1" GridPane.rowIndex="8" />
+            <Button id="uMax" fx:id="uMax" onAction="#setText" GridPane.columnIndex="2" GridPane.rowIndex="8" />
+            <Button id="fMax" fx:id="fMax" onAction="#setText" GridPane.columnIndex="3" GridPane.rowIndex="8" />
+            <Button id="cMax" fx:id="cMax" onAction="#setText" GridPane.columnIndex="4" GridPane.rowIndex="8" />
+
+            <Label text="MIN" GridPane.columnIndex="0" GridPane.rowIndex="9" />
+            <Button id="dMin" fx:id="dMin" onAction="#setText" GridPane.columnIndex="1" GridPane.rowIndex="9" />
+            <Button id="uMin" fx:id="uMin" onAction="#setText" GridPane.columnIndex="2" GridPane.rowIndex="9" />
+            <Button id="fMin" fx:id="fMin" onAction="#setText" GridPane.columnIndex="3" GridPane.rowIndex="9" />
+            <Button id="cMin" fx:id="cMin" onAction="#setText" GridPane.columnIndex="4" GridPane.rowIndex="9" />
+
+            <Label text="Total" GridPane.columnIndex="0" GridPane.rowIndex="10" />
+            <Button fx:id="totalMinMaxDown" styleClass="orange-button" GridPane.columnIndex="1" GridPane.rowIndex="10" />
+            <Button fx:id="totalMinMaxUp" styleClass="orange-button" GridPane.columnIndex="2" GridPane.rowIndex="10" />
+            <Button fx:id="totalMinMaxFree" styleClass="orange-button" GridPane.columnIndex="3" GridPane.rowIndex="10" />
+            <Button fx:id="totalMinMaxCall" styleClass="orange-button" GridPane.columnIndex="4" GridPane.rowIndex="10" />
+
+            <Label text="Pairs" GridPane.columnIndex="0" GridPane.rowIndex="11" />
+            <Button id="dPairs" fx:id="dPairs" onAction="#setText" GridPane.columnIndex="1" GridPane.rowIndex="11" />
+            <Button id="uPairs" fx:id="uPairs" onAction="#setText" GridPane.columnIndex="2" GridPane.rowIndex="11" />
+            <Button id="fPairs" fx:id="fPairs" onAction="#setText" GridPane.columnIndex="3" GridPane.rowIndex="11" />
+            <Button id="cPairs" fx:id="cPairs" onAction="#setText" GridPane.columnIndex="4" GridPane.rowIndex="11" />
+
+            <Label text="Straight" GridPane.columnIndex="0" GridPane.rowIndex="12" />
+            <Button id="dStraight" fx:id="dStraight" onAction="#setText" GridPane.columnIndex="1" GridPane.rowIndex="12" />
+            <Button id="uStraight" fx:id="uStraight" onAction="#setText" GridPane.columnIndex="2" GridPane.rowIndex="12" />
+            <Button id="fStraight" fx:id="fStraight" onAction="#setText" GridPane.columnIndex="3" GridPane.rowIndex="12" />
+            <Button id="cStraight" fx:id="cStraight" onAction="#setText" GridPane.columnIndex="4" GridPane.rowIndex="12" />
+
+            <Label text="Full" GridPane.columnIndex="0" GridPane.rowIndex="13" />
+            <Button id="dFull" fx:id="dFull" onAction="#setText" GridPane.columnIndex="1" GridPane.rowIndex="13" />
+            <Button id="uFull" fx:id="uFull" onAction="#setText" GridPane.columnIndex="2" GridPane.rowIndex="13" />
+            <Button id="fFull" fx:id="fFull" onAction="#setText" GridPane.columnIndex="3" GridPane.rowIndex="13" />
+            <Button id="cFull" fx:id="cFull" onAction="#setText" GridPane.columnIndex="4" GridPane.rowIndex="13" />
+
+            <Label text="Poker" GridPane.columnIndex="0" GridPane.rowIndex="14" />
+            <Button id="dPoker" fx:id="dPoker" onAction="#setText" GridPane.columnIndex="1" GridPane.rowIndex="14" />
+            <Button id="uPoker" fx:id="uPoker" onAction="#setText" GridPane.columnIndex="2" GridPane.rowIndex="14" />
+            <Button id="fPoker" fx:id="fPoker" onAction="#setText" GridPane.columnIndex="3" GridPane.rowIndex="14" />
+            <Button id="cPoker" fx:id="cPoker" onAction="#setText" GridPane.columnIndex="4" GridPane.rowIndex="14" />
+
+            <Label text="Yamb" GridPane.columnIndex="0" GridPane.rowIndex="15" />
+            <Button id="dYamb" fx:id="dYamb" onAction="#setText" GridPane.columnIndex="1" GridPane.rowIndex="15" />
+            <Button id="uYamb" fx:id="uYamb" onAction="#setText" GridPane.columnIndex="2" GridPane.rowIndex="15" />
+            <Button id="fYamb" fx:id="fYamb" onAction="#setText" GridPane.columnIndex="3" GridPane.rowIndex="15" />
+            <Button id="cYamb" fx:id="cYamb" onAction="#setText" GridPane.columnIndex="4" GridPane.rowIndex="15" />
+
+            <Label text="Total" GridPane.columnIndex="0" GridPane.rowIndex="16" />
+            <Button fx:id="totalSpecialDown" styleClass="orange-button" GridPane.columnIndex="1" GridPane.rowIndex="16" />
+            <Button fx:id="totalSpecialUp" styleClass="orange-button" GridPane.columnIndex="2" GridPane.rowIndex="16" />
+            <Button fx:id="totalSpecialFree" styleClass="orange-button" GridPane.columnIndex="3" GridPane.rowIndex="16" />
+            <Button fx:id="totalSpecialCall" styleClass="orange-button" GridPane.columnIndex="4" GridPane.rowIndex="16" />
+
+            <HBox GridPane.columnIndex="2" GridPane.columnSpan="2" GridPane.rowIndex="17" alignment="CENTER_RIGHT">
+                <Label text="Grand Total"/>
+            </HBox>
+            <Button fx:id="grandTotalBtn" style="-fx-background-color: red" text="0" wrapText="true" GridPane.columnIndex="4" GridPane.rowIndex="17" />
+         <columnConstraints>
+            <ColumnConstraints />
+            <ColumnConstraints />
+            <ColumnConstraints />
+            <ColumnConstraints />
+            <ColumnConstraints />
+         </columnConstraints>
+         <rowConstraints>
+            <RowConstraints />
+            <RowConstraints />
+            <RowConstraints />
+            <RowConstraints />
+            <RowConstraints />
+            <RowConstraints />
+            <RowConstraints />
+            <RowConstraints />
+            <RowConstraints />
+            <RowConstraints />
+            <RowConstraints />
+            <RowConstraints />
+            <RowConstraints />
+            <RowConstraints />
+            <RowConstraints />
+            <RowConstraints />
+            <RowConstraints />
+            <RowConstraints />
+         </rowConstraints>
+        </GridPane>
+    </left>
+
+    <center>
+        <BorderPane fx:id="imageBorderPane" stylesheets="@styles2.css">
+            <top>
+                <HBox alignment="CENTER">
+                    <padding>
+                        <Insets bottom="120" top="100" />
+                    </padding>
+                    <Label prefHeight="200" prefWidth="200" />
+                </HBox>
+            </top>
+            <center>
+                <GridPane alignment="CENTER" hgap="15" stylesheets="@styles3.css" vgap="10">
+                    <padding>
+                        <Insets bottom="0" />
+                    </padding>
+                    <HBox alignment="CENTER_LEFT" spacing="5" GridPane.columnIndex="0" GridPane.columnSpan="5" GridPane.rowIndex="1">
+                        <Button fx:id="btnRollDice" alignment="CENTER" onAction="#rollDice" prefWidth="100" text="Start Game"
+                            style="-fx-font-size: 14"/>
+                        <Label fx:id="lblCall" styleClass="label-call" text="" />
+                    </HBox>
+                    <ToggleButton fx:id="diceOne" text="1" GridPane.columnIndex="0" GridPane.rowIndex="2">
+                        <graphic>
+                            <ImageView fitHeight="20" fitWidth="20">
+                                <image>
+                                    <Image url="@png/Alea_1.png" />
+                                </image>
+                            </ImageView>
+                        </graphic>
+                    </ToggleButton>
+                    <ToggleButton fx:id="diceTwo" text="1" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                        <graphic>
+                            <ImageView fitHeight="20" fitWidth="20">
+                                <image>
+                                    <Image url="@png/Alea_1.png" />
+                                </image>
+                            </ImageView>
+                        </graphic>
+                    </ToggleButton>
+                    <ToggleButton fx:id="diceThree" text="1" GridPane.columnIndex="2" GridPane.rowIndex="2">
+                        <graphic>
+                            <ImageView fitHeight="20" fitWidth="20">
+                                <image>
+                                    <Image url="@png/Alea_1.png" />
+                                </image>
+                            </ImageView>
+                        </graphic>
+                    </ToggleButton>
+                    <ToggleButton fx:id="diceFour" text="1" GridPane.columnIndex="3" GridPane.rowIndex="2">
+                        <graphic>
+                            <ImageView fitHeight="20" fitWidth="20">
+                                <image>
+                                    <Image url="@png/Alea_1.png" />
+                                </image>
+                            </ImageView>
+                        </graphic>
+                    </ToggleButton>
+                    <ToggleButton fx:id="diceFive" text="1" GridPane.columnIndex="4" GridPane.rowIndex="2">
+                        <graphic>
+                            <ImageView fitHeight="20" fitWidth="20">
+                                <image>
+                                    <Image url="@png/Alea_1.png" />
+                                </image>
+                            </ImageView>
+                        </graphic>
+                    </ToggleButton>
+                    <HBox alignment="CENTER" spacing="2" GridPane.columnIndex="0" GridPane.columnSpan="5" GridPane.rowIndex="3">
+                        <Label style="-fx-background-color: red;-fx-text-fill: white" text="   Roll   " />
+                        <Label style="-fx-background-color: black;-fx-text-fill: white" text="   Don't roll   " />
+                        <Label fx:id="rollCount" prefWidth="150" style="-fx-background-color: white;-fx-text-fill: darkslategrey;-fx-border-color: darkslategrey;-fx-alignment: center" text="ROLL COUNTER" />
+                    </HBox>
+                    <Label fx:id="lblOnline" text="Online" GridPane.rowIndex="4" visible="false" style="-fx-text-fill: white"/>
+                    <TextArea fx:id="playersTextArea" editable="false" maxWidth="300" prefHeight="230" visible="false" wrapText="true" GridPane.columnSpan="5" GridPane.rowIndex="5" />
+               <columnConstraints>
+                  <ColumnConstraints />
+                  <ColumnConstraints />
+                  <ColumnConstraints />
+                  <ColumnConstraints />
+                  <ColumnConstraints />
+               </columnConstraints>
+               <rowConstraints>
+                  <RowConstraints />
+                  <RowConstraints />
+                  <RowConstraints />
+                  <RowConstraints />
+                  <RowConstraints maxHeight="32.0" minHeight="0.0" prefHeight="0.0" />
+                  <RowConstraints maxHeight="120.0" minHeight="88.0" prefHeight="120.0" />
+               </rowConstraints>
+                </GridPane>
+            </center>
+        </BorderPane>
+    </center>
+
+    <top>
+            <ToolBar style="-fx-background-color: darkslategray">
+                <HBox spacing="10">
+                    <MenuBar  style="-fx-text-fill: orange">
+                        <Menu text="Game">
+                            <items>
+                                <MenuItem onAction="#saveGame" text="Save game" />
+                                <SeparatorMenuItem />
+                                <MenuItem onAction="#handleExit" text="Exit" />
+                            </items>
+                        </Menu>
+                    </MenuBar>
+                    <Button onAction="#openClassesWindow" text="Classes">
+                        <tooltip>
+                            <Tooltip text="Classes" />
+                        </tooltip>
+                    </Button>
+                    <Button fx:id="btnReview" disable="true" onAction="#openReviewWindow" text="Review">
+                        <tooltip>
+                            <Tooltip text="Review" />
+                        </tooltip>
+                    </Button>
+                </HBox>
+            </ToolBar>
+    </top>
+
+</BorderPane>
