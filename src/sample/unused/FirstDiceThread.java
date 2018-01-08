@@ -1,4 +1,4 @@
-package sample.threads;
+package sample.unused;
 
 import sample.models.Dice;
 import sample.models.Game;

@@ -41,31 +41,23 @@ public class DiceUpdateThreadPlayerOne implements Runnable {
     @Override
     public void run() {
 
-        Timer timer = new Timer();
-
-        timer.schedule(new TimerTask() { // timer task to update the seconds
-            @Override
-            public void run() {
-                // use Platform.runLater(Runnable runnable) If you need to update a GUI component from a non-GUI thread.
-                Platform.runLater(new Runnable() {
-                    public void run() {
-//                        if (game.getPlayerOneRollCount() == 1 || game.getPlayerOneRollCount() == 2 || game.getPlayerOneRollCount() == 3) {
+//        Timer timer = new Timer();
+//
+//        timer.schedule(new TimerTask() { // timer task to update the seconds
+//            @Override
+//            public void run() {
+//                Platform.runLater(new Runnable() {
+//                    public void run() {
                             diceSetUpdate();
 //                        }
-                    }
-                });
-            }
-        }, 10, 10);
+//                    }
+//                });
+//            }
+//        }, 10, 10);
 
     }
 
     private void diceSetUpdate() {
-//        diceOne.setText(String.valueOf(game.getPlayerOneLastRoll()[0]));
-//        diceTwo.setText(String.valueOf(game.getPlayerOneLastRoll()[1]));
-//        diceThree.setText(String.valueOf(game.getPlayerOneLastRoll()[2]));
-//        diceFour.setText(String.valueOf(game.getPlayerOneLastRoll()[3]));
-//        diceFive.setText(String.valueOf(game.getPlayerOneLastRoll()[4]));
-
         diceOne.setText(String.valueOf(game.getDiceSet().getDices()[0].getValue()));
         diceTwo.setText(String.valueOf(game.getDiceSet().getDices()[1].getValue()));
         diceThree.setText(String.valueOf(game.getDiceSet().getDices()[2].getValue()));

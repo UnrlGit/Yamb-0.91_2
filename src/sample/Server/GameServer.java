@@ -1,5 +1,7 @@
 package sample.Server;
 
+import sample.threads.ClearClientsServerThread;
+
 import java.io.IOException;
 import java.net.ServerSocket;
 import java.rmi.Remote;
@@ -30,6 +32,8 @@ public class GameServer{
     }
 
     private static void runNetwork() {
+        Thread thread = new Thread(new ClearClientsServerThread(playersArray));
+        thread.start();
         try (ServerSocket serverSocket = new ServerSocket(4321)){
             while (true){
                 new GameServerThread(serverSocket.accept(), playersArray).start();

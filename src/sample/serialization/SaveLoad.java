@@ -8,9 +8,9 @@ import java.io.*;
 import java.util.LinkedList;
 import java.util.List;
 
-public class Save {
+public class SaveLoad {
 
-    public Save() {
+    public SaveLoad() {
     }
 
     public void saveGame(Game gamer) {

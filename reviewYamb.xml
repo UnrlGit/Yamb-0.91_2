@@ -35,9 +35,9 @@
       <onesF>-1</onesF>
       <twosF>-1</twosF>
       <threesF>-1</threesF>
-      <foursF>-1</foursF>
+      <foursF>0</foursF>
       <fivesF>-1</fivesF>
-      <sixesF>0</sixesF>
+      <sixesF>-1</sixesF>
       <maxF>-1</maxF>
       <minF>-1</minF>
       <twoPairsF>-1</twoPairsF>
@@ -50,6 +50,130 @@
       <onesC>-1</onesC>
       <twosC>-1</twosC>
       <threesC>-1</threesC>
+      <foursC>-1</foursC>
+      <fivesC>-1</fivesC>
+      <sixesC>-1</sixesC>
+      <maxC>-1</maxC>
+      <minC>-1</minC>
+      <twoPairsC>-1</twoPairsC>
+      <straightC>-1</straightC>
+      <fullC>-1</fullC>
+      <pokerC>-1</pokerC>
+      <yambC>-1</yambC>
+    </lineCall>
+  </YambPaper>
+  <YambPaper>
+    <lineDown>
+      <onesD>-1</onesD>
+      <twosD>-1</twosD>
+      <threesD>-1</threesD>
+      <foursD>-1</foursD>
+      <fivesD>-1</fivesD>
+      <sixesD>-1</sixesD>
+      <maxD>-1</maxD>
+      <minD>-1</minD>
+      <twoPairsD>-1</twoPairsD>
+      <straightD>-1</straightD>
+      <fullD>-1</fullD>
+      <pokerD>-1</pokerD>
+      <yambD>-1</yambD>
+    </lineDown>
+    <lineUp>
+      <onesU>-1</onesU>
+      <twosU>-1</twosU>
+      <threesU>-1</threesU>
+      <foursU>-1</foursU>
+      <fivesU>-1</fivesU>
+      <sixesU>-1</sixesU>
+      <maxU>-1</maxU>
+      <minU>-1</minU>
+      <twoPairsU>-1</twoPairsU>
+      <straightU>-1</straightU>
+      <fullU>-1</fullU>
+      <pokerU>-1</pokerU>
+      <yambU>-1</yambU>
+    </lineUp>
+    <lineFree>
+      <onesF>-1</onesF>
+      <twosF>-1</twosF>
+      <threesF>-1</threesF>
+      <foursF>0</foursF>
+      <fivesF>-1</fivesF>
+      <sixesF>-1</sixesF>
+      <maxF>-1</maxF>
+      <minF>-1</minF>
+      <twoPairsF>-1</twoPairsF>
+      <straightF>-1</straightF>
+      <fullF>-1</fullF>
+      <pokerF>-1</pokerF>
+      <yambF>-1</yambF>
+    </lineFree>
+    <lineCall>
+      <onesC>1</onesC>
+      <twosC>-1</twosC>
+      <threesC>-1</threesC>
+      <foursC>-1</foursC>
+      <fivesC>-1</fivesC>
+      <sixesC>-1</sixesC>
+      <maxC>-1</maxC>
+      <minC>-1</minC>
+      <twoPairsC>-1</twoPairsC>
+      <straightC>-1</straightC>
+      <fullC>-1</fullC>
+      <pokerC>-1</pokerC>
+      <yambC>-1</yambC>
+    </lineCall>
+  </YambPaper>
+  <YambPaper>
+    <lineDown>
+      <onesD>-1</onesD>
+      <twosD>-1</twosD>
+      <threesD>-1</threesD>
+      <foursD>-1</foursD>
+      <fivesD>-1</fivesD>
+      <sixesD>-1</sixesD>
+      <maxD>-1</maxD>
+      <minD>-1</minD>
+      <twoPairsD>-1</twoPairsD>
+      <straightD>-1</straightD>
+      <fullD>-1</fullD>
+      <pokerD>-1</pokerD>
+      <yambD>-1</yambD>
+    </lineDown>
+    <lineUp>
+      <onesU>-1</onesU>
+      <twosU>-1</twosU>
+      <threesU>-1</threesU>
+      <foursU>-1</foursU>
+      <fivesU>-1</fivesU>
+      <sixesU>-1</sixesU>
+      <maxU>-1</maxU>
+      <minU>-1</minU>
+      <twoPairsU>-1</twoPairsU>
+      <straightU>-1</straightU>
+      <fullU>-1</fullU>
+      <pokerU>-1</pokerU>
+      <yambU>-1</yambU>
+    </lineUp>
+    <lineFree>
+      <onesF>-1</onesF>
+      <twosF>-1</twosF>
+      <threesF>-1</threesF>
+      <foursF>0</foursF>
+      <fivesF>-1</fivesF>
+      <sixesF>-1</sixesF>
+      <maxF>-1</maxF>
+      <minF>-1</minF>
+      <twoPairsF>-1</twoPairsF>
+      <straightF>-1</straightF>
+      <fullF>-1</fullF>
+      <pokerF>-1</pokerF>
+      <yambF>-1</yambF>
+    </lineFree>
+    <lineCall>
+      <onesC>1</onesC>
+      <twosC>-1</twosC>
+      <threesC>6</threesC>
       <foursC>-1</foursC>
       <fivesC>-1</fivesC>
       <sixesC>-1</sixesC>

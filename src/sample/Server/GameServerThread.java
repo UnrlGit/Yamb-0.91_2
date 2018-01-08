@@ -5,7 +5,6 @@ import java.net.Socket;
 import java.util.ArrayList;
 
 public class GameServerThread extends Thread{
-//    private ServerSocket serverSocket = null;
     private Socket socket = null;
     private ObjectInputStream inStream = null;
     private ArrayList<SimpleServerPlayerData> arrayList;

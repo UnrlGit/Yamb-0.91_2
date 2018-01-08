@@ -18,6 +18,7 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.util.Optional;
+import java.util.concurrent.ScheduledExecutorService;
 
 public class Main extends Application {
 
@@ -136,5 +137,11 @@ public class Main extends Application {
             System.exit(0);
         }
         return gameType;
+    }
+
+    @Override
+    public void stop() throws Exception {
+        Platform.exit();
+
     }
 }

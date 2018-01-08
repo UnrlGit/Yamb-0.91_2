@@ -11,6 +11,7 @@ import java.io.ObjectOutputStream;
 import java.net.Socket;
 import java.net.SocketTimeoutException;
 import java.net.UnknownHostException;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.Timer;
 import java.util.TimerTask;
@@ -26,9 +27,12 @@ public class ClientServerScoreUpdate implements Runnable {
 
     @Override
     public synchronized void run() {
-        Timer timer = new Timer();
+        Timer timer = new Timer(true);
+
+
 
         timer.schedule(new TimerTask() { // timer task to update the seconds
+
             @Override
             public void run() {
                 Platform.runLater(new Runnable() {
@@ -41,10 +45,11 @@ public class ClientServerScoreUpdate implements Runnable {
                             sb.append(System.getProperty("line.separator"));
                         }
                         playersTextArea.setText(sb.toString());
+
                     }
                 });
             }
-        }, 10, 10);
+        }, 500, 500);
     }
 
     private void setWinConditions(ArrayList<SimpleServerPlayerData> playerData){

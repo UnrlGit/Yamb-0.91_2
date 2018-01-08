@@ -16,7 +16,7 @@ import sample.enums.GameType;
 import sample.enums.RollCount;
 import sample.models.*;
 import sample.Server.DiceRollService;
-import sample.serialization.Save;
+import sample.serialization.SaveLoad;
 import sample.threads.*;
 
 import javax.xml.parsers.ParserConfigurationException;
@@ -274,6 +274,13 @@ public class Controller {
         }else if (game.getPlayerOneRollCount() == RollCount.SECOND){
             game.setPlayerOneRollCount(RollCount.THIRD);
         }
+
+
+        DiceUpdateThreadPlayerOne d = new DiceUpdateThreadPlayerOne(game, diceOne, diceTwo, diceThree, diceFour, diceFive, rollCount, btnRollDice);
+        Thread t = new Thread(d);
+        t.setDaemon(true);
+        Platform.runLater(t);
+
     }
 
     //ROLLING DICE ON CLIENT
@@ -796,7 +803,7 @@ public class Controller {
         }
         if (game.getGameType() == GameType.SINGLEPLAYER_LOAD){
             loadGame();
-            Save save = new Save();
+            SaveLoad save = new SaveLoad();
             yambPapers = save.loadReviewData();
         }
 
@@ -813,7 +820,7 @@ public class Controller {
     }
 
     public void saveGame(ActionEvent actionEvent) {
-        Save save = new Save();
+        SaveLoad save = new SaveLoad();
         save.saveGame(game);
         save.saveReviewData(yambPapers);
     }
@@ -1149,6 +1156,8 @@ public class Controller {
                         40, 40, true, true, true, false))));
         mainBorderPane.setStyle("-fx-background-color: darkslategray");
     }
+
+
 }
 
 
