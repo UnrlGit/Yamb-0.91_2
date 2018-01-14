@@ -8,12 +8,10 @@ public class GameServerThread extends Thread{
     private Socket socket = null;
     private ObjectInputStream inStream = null;
     private ArrayList<SimpleServerPlayerData> arrayList;
-    private boolean allPlayersFinished;
 
     public GameServerThread(Socket socket, ArrayList<SimpleServerPlayerData> playerData){
         this.socket = socket;
         this.arrayList = playerData;
-        this.allPlayersFinished = false;
     }
 
     @Override
@@ -34,13 +32,7 @@ public class GameServerThread extends Thread{
             if(!exists) {
                 arrayList.add(ssdp);
             }
-//
-//
-//            //GAME ENDING LOGIC
-//            gameFinished();
-//            if (allPlayersFinished == false) {
-//                gameEndings();
-//            }
+
 
             ObjectOutputStream outputStream = new ObjectOutputStream(socket.getOutputStream());
             outputStream.writeObject(arrayList);
@@ -53,39 +45,6 @@ public class GameServerThread extends Thread{
                 socket.close();
             } catch (IOException e) {
                 System.out.println("Socket closing problems");
-            }
-        }
-    }
-
-    private boolean gameFinished() {
-        boolean allPlayersComplete = true;
-        String winLogo = "WINNER: ";
-
-        for (SimpleServerPlayerData spd:arrayList) {
-            if (spd.isGameComplete() == false){
-                allPlayersComplete = false;
-            }
-        }
-
-        if (allPlayersComplete)
-        {
-            SimpleServerPlayerData winner = arrayList.get(0);
-            System.out.println("IS WINNER?"  + winner.getNick());
-
-            for (SimpleServerPlayerData winnerFromArray:arrayList) {
-                if (winnerFromArray.getScore() >= winner.getScore()){
-                    winner = winnerFromArray;
-                }
-            }
-                winner.setNick(winLogo+winner.getNick());
-        }
-        return allPlayersComplete;
-    }
-
-    private void gameEndings() {
-        for (SimpleServerPlayerData playa:arrayList) {
-            if (playa.isGameComplete()){
-                playa.setNick("GAME COMPLETE: " + playa.getNick());
             }
         }
     }

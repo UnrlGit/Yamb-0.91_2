@@ -28,16 +28,13 @@ public class Main extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception {
-        Game game = new Game(new Player("SinglePlayer", true), GameType.SINGLEPLAYER);
+        Game game = new Game(new Player("SinglePlayer"), GameType.SINGLEPLAYER);
         GameType gameType = chooseGameType();
-        // continueGame = false;
         if (gameType == GameType.SINGLEPLAYER) {
             gameType = continueGame();
         }
         if (gameType == GameType.SINGLEPLAYER_LOAD) {
             game = loadGame();
-        } else {
-            //  game = new Game(new Player("SinglePlayer", true));
         }
         game.setGameType(gameType);
 
@@ -49,7 +46,7 @@ public class Main extends Application {
 
             Optional<String> playerName = dialog.showAndWait();
             if (playerName.isPresent()) {
-                game = new Game(new Player(playerName.get(), true), GameType.MULTIPLAYER);
+                game = new Game(new Player(playerName.get()), GameType.MULTIPLAYER);
             } else {
                 System.exit(0);
             }
@@ -69,7 +66,6 @@ public class Main extends Application {
     }
 
     private GameType continueGame() {
-       // boolean continueGame = false;
         GameType type = GameType.SINGLEPLAYER;
         Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
         alert.setTitle("");
@@ -86,9 +82,7 @@ public class Main extends Application {
         Optional<ButtonType> result = alert.showAndWait();
         if (result.get() == buttonTypeOne) {
             type = GameType.SINGLEPLAYER_LOAD;
-           // continueGame = true;
         } else if (result.get() == buttonTypeTwo) {
-           // continueGame = false;
         } else {
             System.exit(0);
         }
@@ -97,16 +91,14 @@ public class Main extends Application {
 
     public Game loadGame() {
         Game game;
-
-        // kreiranje ObjectInputStream objekta
         try {
             ObjectInputStream ois = new ObjectInputStream(new FileInputStream(
                     "yamb.dat"));
             game = (Game) ois.readObject();
             ois.close();
         } catch (IOException | ClassNotFoundException e) {
-          //  e.printStackTrace();
-            game = new Game(new Player("SinglePlayer", true), GameType.SINGLEPLAYER_LOAD);
+            e.printStackTrace();
+            game = new Game(new Player("SinglePlayer"), GameType.SINGLEPLAYER_LOAD);
             Dice[] dices = {new Dice(1, true),new Dice(1, true),
                     new Dice(1, true),new Dice(1, true),new Dice(1, true)};
             game.getDiceSet().setDices(dices);

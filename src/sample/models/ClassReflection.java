@@ -16,9 +16,9 @@ public class ClassReflection {
 
 
                 sb.append("Class name: " + klasa.getSimpleName());
-                sb.append(System.getProperty("line.separator"));
+                sb.append(System.lineSeparator());
                 sb.append("Full class name: " + klasa.getName());
-                sb.append(System.getProperty("line.separator"));
+                sb.append(System.lineSeparator());
 
                 //CLASS MODIFIERS
                 sb.append("Class modifier:");
@@ -38,24 +38,23 @@ public class ClassReflection {
                 if (Modifier.isStatic(klasModifiers)) {
                     sb.append("static");
                 }
-                sb.append(System.getProperty("line.separator"));
+                sb.append(System.lineSeparator());
 
                 //CLASS INTERFACES
                 Class[] listaSucelja = klasa.getInterfaces();
-                System.out.println();
-                sb.append(System.getProperty("line.separator"));
+                sb.append(System.lineSeparator());
                 sb.append("Interfaces");
-                sb.append(System.getProperty("line.separator"));
+                sb.append(System.lineSeparator());
                 for (Class interfaces : listaSucelja) {
                     sb.append(interfaces.getName());
-                    sb.append(System.getProperty("line.separator"));
+                    sb.append(System.lineSeparator());
                 }
-                sb.append(System.getProperty("line.separator"));
+                sb.append(System.lineSeparator());
 
 
                 //CONSTRUCTORS
                 sb.append("Constructors:");
-                sb.append(System.getProperty("line.separator"));
+                sb.append(System.lineSeparator());
                 Constructor[] constructors = klasa.getConstructors();
                 for (Constructor c : constructors) {
                     int constructorMod = c.getModifiers();
@@ -77,14 +76,14 @@ public class ClassReflection {
                         sb.append(" " + nazivParametra);
                     }
                     sb.append(" );");
-                    sb.append(System.getProperty("line.separator"));
+                    sb.append(System.lineSeparator());
                 }
 
 
                 //FIELDS
-                sb.append(System.getProperty("line.separator"));
+                sb.append(System.lineSeparator());
                 sb.append("Fields");
-                sb.append(System.getProperty("line.separator"));
+                sb.append(System.lineSeparator());
                 Field[] poljeVarijabli = klasa.getDeclaredFields();
                 for (Field varijabla : poljeVarijabli) {
                     int fieldMod = varijabla.getModifiers();
@@ -100,14 +99,14 @@ public class ClassReflection {
                         sb.append("static ");
                     sb.append(varijabla.getType().getSimpleName());
                     sb.append(" " + varijabla.getName() + ";");
-                    sb.append(System.getProperty("line.separator"));
+                    sb.append(System.lineSeparator());
                 }
-                sb.append(System.getProperty("line.separator"));
+                sb.append(System.lineSeparator());
 
 
                 //METHODS
                 sb.append("Methods: ");
-                sb.append(System.getProperty("line.separator"));
+                sb.append(System.lineSeparator());
                 Method[] metode = klasa.getMethods();
                 for (Method metoda : metode) {
                     int metodaMods = metoda.getModifiers();
@@ -138,10 +137,10 @@ public class ClassReflection {
                         sb.append("()");
                     }
 
-                    sb.append(System.getProperty("line.separator"));
+                    sb.append(System.lineSeparator());
 
                 }
-                System.out.println(sb.toString());
+
         } catch (ClassNotFoundException  ex) {
             ex.printStackTrace();
         }

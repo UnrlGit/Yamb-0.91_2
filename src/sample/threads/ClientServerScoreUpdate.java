@@ -1,6 +1,7 @@
 package sample.threads;
 
 import javafx.application.Platform;
+import javafx.scene.control.Alert;
 import javafx.scene.control.TextArea;
 import sample.Server.SimpleServerPlayerData;
 import sample.models.Player;
@@ -11,7 +12,6 @@ import java.io.ObjectOutputStream;
 import java.net.Socket;
 import java.net.SocketTimeoutException;
 import java.net.UnknownHostException;
-import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.Timer;
 import java.util.TimerTask;
@@ -29,14 +29,12 @@ public class ClientServerScoreUpdate implements Runnable {
     public synchronized void run() {
         Timer timer = new Timer(true);
 
-
-
         timer.schedule(new TimerTask() { // timer task to update the seconds
 
             @Override
             public void run() {
                 Platform.runLater(new Runnable() {
-                    public void run() {
+                    public synchronized void run() {
                         StringBuilder sb = new StringBuilder();
                         ArrayList<SimpleServerPlayerData> playersData = updateScore();
                         setWinConditions(playersData);
@@ -89,10 +87,6 @@ public class ClientServerScoreUpdate implements Runnable {
                 ObjectOutputStream outputStream = new ObjectOutputStream(socket.getOutputStream());
                 SimpleServerPlayerData sspd = new SimpleServerPlayerData(
                         player.getYambPaper().getTotal(), player.getNick(), player.getId(), player.isGameComplete());
-//                System.out.println("Object to be written = " + sspd.getNick() + sspd.getScore());
-                if (player.isGameComplete()){
-//                    System.out.println("GEJM COMPLIT");
-                }
                 outputStream.writeObject(sspd);
 
 
@@ -108,13 +102,20 @@ public class ClientServerScoreUpdate implements Runnable {
             } catch (ClassNotFoundException e) {
                 System.out.println("class not found");
                 e.printStackTrace();
+
             }
         } catch (UnknownHostException e) {
             System.out.println("crashed ukwnown" +
                     "");
             e.printStackTrace();
+
         } catch (IOException e) {
-            System.out.println("crashed IO"); e.printStackTrace();
+
+//            System.out.println("crashed IO"); e.printStackTrace();
+            System.out.println("GameServer not started!");
+            System.out.println("Please start it from Server package!");
+            System.exit(0);
+
         }
         return null;
     }

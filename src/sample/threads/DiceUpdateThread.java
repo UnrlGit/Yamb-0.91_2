@@ -1,20 +1,13 @@
 package sample.threads;
 
-import javafx.application.Platform;
-import javafx.scene.Node;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ToggleButton;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import sample.enums.RollCount;
 import sample.models.Game;
 
-import java.net.URL;
-import java.util.Timer;
-import java.util.TimerTask;
-
-public class DiceUpdateThreadPlayerOne implements Runnable {
+public class DiceUpdateThread implements Runnable {
     Game game;
     ToggleButton diceOne;
     ToggleButton diceTwo;
@@ -24,9 +17,9 @@ public class DiceUpdateThreadPlayerOne implements Runnable {
     Label rollCount;
     Button btnRollDice;
 
-    public DiceUpdateThreadPlayerOne(Game game, ToggleButton diceOne, ToggleButton diceTwo,
-                                     ToggleButton diceThree, ToggleButton diceFour,
-                                     ToggleButton diceFive, Label rollCount, Button btnRollDice) {
+    public DiceUpdateThread(Game game, ToggleButton diceOne, ToggleButton diceTwo,
+                            ToggleButton diceThree, ToggleButton diceFour,
+                            ToggleButton diceFive, Label rollCount, Button btnRollDice) {
         this.game = game;
         this.diceOne = diceOne;
         this.diceTwo = diceTwo;
@@ -40,21 +33,7 @@ public class DiceUpdateThreadPlayerOne implements Runnable {
 
     @Override
     public void run() {
-
-//        Timer timer = new Timer();
-//
-//        timer.schedule(new TimerTask() { // timer task to update the seconds
-//            @Override
-//            public void run() {
-//                Platform.runLater(new Runnable() {
-//                    public void run() {
-                            diceSetUpdate();
-//                        }
-//                    }
-//                });
-//            }
-//        }, 10, 10);
-
+        diceSetUpdate();
     }
 
     private void diceSetUpdate() {

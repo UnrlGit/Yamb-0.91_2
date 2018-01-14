@@ -231,13 +231,11 @@ public class YambLine implements Serializable {
         return full; }
     public void setFull(Dice[] diceSet) {
         int countedDice[] = getSortedDice(diceSet);
-        System.out.println("DICE LENGTH: " + countedDice.length);
         int bonus = 30;
         boolean hasThreeOfType = false;
         boolean hasTwoOfType = false;
         this.full = 0;
         this.full += bonus;
-        System.out.println(this.full + "1");
         for (int i = 1; i < countedDice.length; i++) {
             if(countedDice[i] == 5){
                 this.full += (i*5);
@@ -246,14 +244,10 @@ public class YambLine implements Serializable {
             if (countedDice[i] == 3){
                 hasThreeOfType = true;
                 this.full = this.full+(3*i);
-                System.out.println(i + "<-- 3");
-                System.out.println(this.full + " 2FULL");
             }
             if (countedDice[i] == 2){
                 hasTwoOfType = true;
                 this.full +=(2*i);
-                System.out.println(i + "<-- 2");
-                System.out.println(this.full + "3 FULL");
             }
         }
 

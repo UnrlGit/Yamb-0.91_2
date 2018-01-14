@@ -7,7 +7,6 @@ public class Player implements Serializable {
     private YambPaper yambPaper;
     private String nick;
     private UUID id;
-    private boolean rollsFirst;
     private boolean gameComplete;
 
     public boolean isGameComplete() {
@@ -18,21 +17,14 @@ public class Player implements Serializable {
         this.gameComplete = gameComplete;
     }
 
-    public Player(String nick, boolean rollsFirst) {
+    public Player(String nick) {
         this.yambPaper = new YambPaper();
         this.nick = nick;
-        this.rollsFirst = rollsFirst;
         this.id = UUID.randomUUID();
         this.gameComplete = false;
     }
 
-    public boolean isRollsFirst() {
-        return rollsFirst;
-    }
 
-    public void setRollsFirst(boolean rollsFirst) {
-        this.rollsFirst = rollsFirst;
-    }
 
     public YambPaper getYambPaper() {
         return yambPaper;

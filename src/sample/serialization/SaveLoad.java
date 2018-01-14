@@ -23,14 +23,13 @@ public class SaveLoad {
     }
 
     public Game loadGame() {
-        Game gamer = new Game(new Player("SinglePlayer", true), GameType.SINGLEPLAYER_LOAD);
+        Game gamer = new Game(new Player("SinglePlayer"), GameType.SINGLEPLAYER_LOAD);
 
         try {
             ObjectInputStream ois = new ObjectInputStream(
                     new FileInputStream("yamb.dat"));
             gamer = (Game) ois.readObject();
             ois.close();
-            System.out.println(gamer.getPlayer().getNick());
         } catch (IOException | ClassNotFoundException e) {
             e.printStackTrace();
         }

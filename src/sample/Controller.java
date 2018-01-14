@@ -276,7 +276,7 @@ public class Controller {
         }
 
 
-        DiceUpdateThreadPlayerOne d = new DiceUpdateThreadPlayerOne(game, diceOne, diceTwo, diceThree, diceFour, diceFive, rollCount, btnRollDice);
+        DiceUpdateThread d = new DiceUpdateThread(game, diceOne, diceTwo, diceThree, diceFour, diceFive, rollCount, btnRollDice);
         Thread t = new Thread(d);
         t.setDaemon(true);
         Platform.runLater(t);
@@ -313,7 +313,7 @@ public class Controller {
     //REFRESHING DICE LABELS
     private void refresher() {
         if (!gameStartedPlayerOne) {
-            DiceUpdateThreadPlayerOne d = new DiceUpdateThreadPlayerOne(game, diceOne, diceTwo, diceThree, diceFour, diceFive, rollCount, btnRollDice);
+            DiceUpdateThread d = new DiceUpdateThread(game, diceOne, diceTwo, diceThree, diceFour, diceFive, rollCount, btnRollDice);
             Thread t = new Thread(d);
             t.setDaemon(true);
             Platform.runLater(t);
@@ -440,7 +440,8 @@ public class Controller {
     //CHECKING IF CLIENT COMPLETED GAME
     private void gameComplete() {
 
-        if (game.getPlayer().getYambPaper().getDown().isSinglesTypeComplete()){
+//        if (game.getPlayer().getYambPaper().getDown().isSinglesTypeComplete()){
+        if (game.getPlayer().getYambPaper().isPaperFull()){
             game.getPlayer().setGameComplete(true);
             System.out.println("DONE!");
         }
@@ -820,6 +821,14 @@ public class Controller {
     }
 
     public void saveGame(ActionEvent actionEvent) {
+        if (game.getGameType() == GameType.MULTIPLAYER){
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setHeaderText(null);
+            alert.setContentText("Save game is available only for single player mode");
+            alert.setTitle("Info");
+            alert.showAndWait();
+            return;
+        }
         SaveLoad save = new SaveLoad();
         save.saveGame(game);
         save.saveReviewData(yambPapers);

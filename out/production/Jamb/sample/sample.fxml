@@ -345,7 +345,7 @@
                     <MenuBar  style="-fx-text-fill: orange">
                         <Menu text="Game">
                             <items>
-                                <MenuItem onAction="#saveGame" text="Save game" />
+                                <MenuItem onAction="#saveGame" text="Save game"/>
                                 <SeparatorMenuItem />
                                 <MenuItem onAction="#handleExit" text="Exit" />
                             </items>

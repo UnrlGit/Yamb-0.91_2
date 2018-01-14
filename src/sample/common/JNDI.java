@@ -1,6 +1,5 @@
 package sample.common;
 
-import sample.unused.Constants;
 
 import javax.naming.Context;
 import javax.naming.InitialContext;
@@ -11,8 +10,6 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.nio.file.Paths;
 import java.util.Hashtable;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 public class JNDI {
     public static final String RMI_PORT_FILE     = "rmiport.txt";
@@ -35,7 +32,7 @@ public class JNDI {
         try(BufferedReader br = new BufferedReader(new FileReader(file))){
             return Integer.parseInt(br.readLine());
         } catch (IOException ex) {
-            Logger.getLogger(Constants.class.getName()).log(Level.SEVERE, null, ex);
+            ex.printStackTrace();
         }
         return -1;
     }
